@@ -15,7 +15,8 @@ Work in progress to help me learn. Used Qt 5.12.8 to build the Ui. The game is m
 - [ ] Add pass & don't pass odds bets, *3-4-5 game*
 - [ ] Add multi outcome bets ie: *any crap, horn, hi lo, field*
 - [ ] Clean stuff up, might have some redundancies
-- [ ] Add pop up at the start with *how to play and rules*
+- [X] Add pop up at the start with *how to play and rules* 
+- [ ] Fix maximize to make full screen 
 - [ ] Further intergrations
 
 ---

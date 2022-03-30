@@ -34,6 +34,9 @@ if(ANDROID)
     bet.cpp
     bet.h
     mainwindow.ui
+    rulespopup.cpp
+    rulespopup.h
+    rulespopup.ui
   )
 else()
   add_executable(SoCraps
@@ -43,6 +46,9 @@ else()
     bet.cpp
     bet.h
     mainwindow.ui
+    rulespopup.cpp
+    rulespopup.h
+    rulespopup.ui
   )
 endif()
 
