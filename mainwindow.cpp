@@ -1,6 +1,7 @@
 #include "bet.h"
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "rulespopup.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -15,6 +16,14 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+
+void MainWindow::on_helpButton_clicked()
+{
+    rulespopup rulespopup;
+    rulespopup.setModal(true);
+    rulespopup.exec();
 }
 
 
