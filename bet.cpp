@@ -445,6 +445,13 @@ void MainWindow::outcome()
 
             ui->betPushButton->setEnabled(true);             /// resets pass line bet
             ui->repeatButton->setEnabled(true);
+               
+            ui->fourSpinBox->setValue(Bet::betPlace[0]);
+            ui->fiveSpinBox->setValue(Bet::betPlace[1]);
+            ui->sixSpinBox->setValue(Bet::betPlace[2]);
+            ui->eightSpinBox->setValue(Bet::betPlace[3]);
+            ui->nineSpinBox->setValue(Bet::betPlace[4]);
+            ui->tenSpinBox->setValue(Bet::betPlace[5]);
 
         }else {
             ui->passSpinBox->setValue(Bet::table[0]);
