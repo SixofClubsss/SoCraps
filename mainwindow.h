@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "rulespopup.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -43,6 +44,8 @@ private slots:
     void on_repeatButton_clicked();
 
     void on_oRepeatButton_clicked();
+    
+    void on_heloButton_clicked();
 
 
 private:
