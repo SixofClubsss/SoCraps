@@ -45,7 +45,7 @@ private slots:
 
     void on_oRepeatButton_clicked();
     
-    void on_heloButton_clicked();
+    void on_helpButton_clicked();
 
 
 private:
