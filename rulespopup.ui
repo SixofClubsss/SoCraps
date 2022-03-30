@@ -75,7 +75,7 @@
    </palette>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Rules</string>
   </property>
   <widget class="QTextBrowser" name="textBrowser">
    <property name="geometry">
