@@ -28,6 +28,7 @@ public:
     void takeState();
     void repeatBet();
     void oRepeatBet();
+    void playerOdds();
 
 
 private slots:
@@ -44,7 +45,7 @@ private slots:
     void on_repeatButton_clicked();
 
     void on_oRepeatButton_clicked();
-    
+
     void on_helpButton_clicked();
 
 

@@ -9,7 +9,7 @@ Work in progress to help me learn. Used Qt 5.12.8 to build the Ui. The game is m
 ---
 ## Screenshot
 
-![SoCrapsScreen](https://user-images.githubusercontent.com/84689659/160744559-418bb7f2-89b5-4500-9eca-45d11449a40a.jpg)
+![SoCrapsScreen](https://user-images.githubusercontent.com/84689659/161405837-fdc58e5f-cbb9-4391-91a9-c5d71fa367ac.jpg)
 ---
 ### To Do List
 - [ ] Add pass & don't pass odds bets, *3-4-5 game*
@@ -17,6 +17,7 @@ Work in progress to help me learn. Used Qt 5.12.8 to build the Ui. The game is m
 - [ ] Clean stuff up, might have some redundancies
 - [X] Add pop up at the start with *how to play and rules* 
 - [ ] Fix maximize to make full screen 
+- [ ] Button colors don't work when built
 - [ ] Further intergrations
 
 ---

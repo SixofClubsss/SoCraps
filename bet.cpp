@@ -110,7 +110,7 @@ void MainWindow::fund()     /// deposit funds
         ui->fundsSpinBox->setValue(Bet::balance + addBal);
       }
 
-    ui->label->setText(tr("DEPOSIT\nSUCCESSFUL"));
+    ui->label->setText(tr("DEPOSIT SUCCESSFUL"));
 }
 
 
@@ -119,10 +119,13 @@ void MainWindow::pass()             /// make a pass or don't pass bet
     int index = ui->comboBox->currentIndex();
 
     if(ui->fundsSpinBox->value() <= 0){
-        ui->label->setText(tr("NOT ENOUGH\nFUNDS"));
+        ui->label->setText(tr("NOT ENOUGH FUNDS"));
         return;
 
-        }else
+    }else if(ui->amountSpinBox_2->value() <= 0){
+        ui->label->setText(tr("SELECT AMOUNT TO BET"));
+        return;
+    }else
 
         Bet::Roll::betAmount = ui->amountSpinBox_2->value();
         Bet::balance = ui->fundsSpinBox->value();
@@ -147,10 +150,13 @@ void MainWindow::place()        /// place bets on table, they will remain untill
 {
 
     if(ui->fundsSpinBox->value() <= 0){
-        ui->label->setText(tr("NOT ENOUGH\nFUNDS"));
+        ui->label->setText(tr("NOT ENOUGH FUNDS"));
         return;
 
-        }else
+    }else if(ui->amountSpinBox->value() <= 0){
+        ui->label->setText(tr("SELECT AMOUNT TO BET"));
+        return;
+    }else
 
             Bet::Roll::betAmount = ui->amountSpinBox->value();
             Bet::balance = ui->fundsSpinBox->value();
@@ -159,7 +165,7 @@ void MainWindow::place()        /// place bets on table, they will remain untill
 
                 if(ui->betSpinBox->value() == 4){
                     Bet::betPlace[0] += Bet::Roll::betAmount;
-                    ui->label->setText(tr("BET PLACED\nON 4"));
+                    ui->label->setText(tr("BET PLACED ON 4"));
 
                     if(ui->fourSpinBox->value() <= 0){
                     ui->fourSpinBox->setValue(Bet::betPlace[0]);
@@ -169,7 +175,7 @@ void MainWindow::place()        /// place bets on table, they will remain untill
 
                 }else if(ui->betSpinBox->value() == 5){
                     Bet::betPlace[1] += Bet::Roll::betAmount;
-                    ui->label->setText(tr("BET PLACED\nON 5"));
+                    ui->label->setText(tr("BET PLACED ON 5"));
 
                     if(ui->fiveSpinBox->value() <= 0){
                     ui->fiveSpinBox->setValue(Bet::betPlace[1]);
@@ -179,7 +185,7 @@ void MainWindow::place()        /// place bets on table, they will remain untill
 
                 }else if(ui->betSpinBox->value() == 6){
                     Bet::betPlace[2] += Bet::Roll::betAmount;
-                    ui->label->setText(tr("BET PLACED\nON 6"));
+                    ui->label->setText(tr("BET PLACED ON 6"));
 
                     if(ui->sixSpinBox->value() <= 0){
                     ui->sixSpinBox->setValue(Bet::betPlace[2]);
@@ -189,7 +195,7 @@ void MainWindow::place()        /// place bets on table, they will remain untill
 
                 }else if(ui->betSpinBox->value() == 8){
                     Bet::betPlace[3] += Bet::Roll::betAmount;
-                    ui->label->setText(tr("BET PLACED\nON 8"));
+                    ui->label->setText(tr("BET PLACED ON 8"));
 
                     if(ui->eightSpinBox->value() <= 0){
                     ui->eightSpinBox->setValue(Bet::betPlace[3]);
@@ -199,7 +205,7 @@ void MainWindow::place()        /// place bets on table, they will remain untill
 
                 }else if(ui->betSpinBox->value() == 9){
                     Bet::betPlace[4] += Bet::Roll::betAmount;
-                    ui->label->setText(tr("BET PLACED\nON 9"));
+                    ui->label->setText(tr("BET PLACED ON 9"));
 
                     if(ui->nineSpinBox->value() <= 0){
                     ui->nineSpinBox->setValue(Bet::betPlace[4]);
@@ -209,7 +215,7 @@ void MainWindow::place()        /// place bets on table, they will remain untill
 
                 }else if(ui->betSpinBox->value() == 10){
                     Bet::betPlace[5] += Bet::Roll::betAmount;
-                    ui->label->setText(tr("BET PLACED\nON 10"));
+                    ui->label->setText(tr("BET PLACED ON 10"));
 
                     if(ui->tenSpinBox->value() <= 0){
                     ui->tenSpinBox->setValue(Bet::betPlace[5]);
@@ -220,7 +226,7 @@ void MainWindow::place()        /// place bets on table, they will remain untill
 
                 }else if(ui->betSpinBox->value() == 2){
                     Bet::betOt[0] += Bet::Roll::betAmount;
-                    ui->label->setText(tr("ONE TIME BET\n PLACED ON 2"));
+                    ui->label->setText(tr("ONE TIME BET PLACED ON 2"));
 
                     if(ui->twoSpinBox->value() <= 0){
                         ui->twoSpinBox->setValue(Bet::betOt[0]);
@@ -230,7 +236,7 @@ void MainWindow::place()        /// place bets on table, they will remain untill
 
                 }else if(ui->betSpinBox->value() == 3){
                     Bet::betOt[1] += Bet::Roll::betAmount;
-                    ui->label->setText(tr("ONE TIME BET\n PLACED ON 3"));
+                    ui->label->setText(tr("ONE TIME BET PLACED ON 3"));
 
                     if(ui->threeSpinBox->value() <= 0){
                         ui->threeSpinBox->setValue(Bet::betOt[1]);
@@ -240,7 +246,7 @@ void MainWindow::place()        /// place bets on table, they will remain untill
 
                 }else if(ui->betSpinBox->value() == 7){
                     Bet::betOt[2] += Bet::Roll::betAmount;
-                    ui->label->setText(tr("ONE TIME BET\n PLACED ON 7"));
+                    ui->label->setText(tr("ONE TIME BET PLACED ON 7"));
 
                     if(ui->sevenSpinBox->value() <= 0){
                         ui->sevenSpinBox->setValue(Bet::betOt[2]);
@@ -250,7 +256,7 @@ void MainWindow::place()        /// place bets on table, they will remain untill
 
                 }else if(ui->betSpinBox->value() == 11){
                     Bet::betOt[3] += Bet::Roll::betAmount;
-                    ui->label->setText(tr("ONE TIME BET\n PLACED ON 11"));
+                    ui->label->setText(tr("ONE TIME BET PLACED ON 11"));
 
                     if(ui->elevenSpinBox->value() <= 0){
                         ui->elevenSpinBox->setValue(Bet::betOt[3]);
@@ -260,7 +266,7 @@ void MainWindow::place()        /// place bets on table, they will remain untill
 
                 }else if(ui->betSpinBox->value() == 12){
                     Bet::betOt[4] += Bet::Roll::betAmount;
-                    ui->label->setText(tr("ONE TIME BET\n PLACED ON 12"));
+                    ui->label->setText(tr("ONE TIME BET PLACED ON 12"));
 
                     if(ui->twelveSpinBox->value() <= 0){
                         ui->twelveSpinBox->setValue(Bet::betOt[4]);
@@ -285,72 +291,72 @@ void MainWindow::rPlace()       /// remove a place bet or a one time bet
                 Bet::betPlace[0] = 0;
                 Bet::Stored::betPlace[0] = Bet::betPlace[0];
                 ui->fourSpinBox->setValue(Bet::betPlace[0]);
-                ui->label->setText(tr("BET CLEARED\nON 4"));
+                ui->label->setText(tr("BET CLEARED ON 4"));
 
             }else if(ui->RBetSpinBox->value() == 5){
                 Bet::balance += ui->fiveSpinBox->value();
                 Bet::betPlace[1] = 0;
                 Bet::Stored::betPlace[1] = Bet::betPlace[1];
                 ui->fiveSpinBox->setValue(Bet::betPlace[1]);
-                ui->label->setText(tr("BET CLEARED\nON 5"));
+                ui->label->setText(tr("BET CLEARED ON 5"));
 
             }else if(ui->RBetSpinBox->value() == 6){
                 Bet::balance += ui->sixSpinBox->value();
                 Bet::betPlace[2] = 0;
                 Bet::Stored::betPlace[2] = Bet::betPlace[2];
                 ui->sixSpinBox->setValue(Bet::betPlace[2]);
-                ui->label->setText(tr("BET CLEARED\nON 6"));
+                ui->label->setText(tr("BET CLEARED ON 6"));
 
             }else if(ui->RBetSpinBox->value() == 8){
                 Bet::balance += ui->eightSpinBox->value();
                 Bet::betPlace[3] = 0;
                 Bet::Stored::betPlace[3] = Bet::betPlace[3];
                 ui->eightSpinBox->setValue(Bet::betPlace[3]);
-                ui->label->setText(tr("BET CLEARED\nON 8"));
+                ui->label->setText(tr("BET CLEARED ON 8"));
 
             }else if(ui->RBetSpinBox->value() == 9){
                 Bet::balance += ui->nineSpinBox->value();
                 Bet::betPlace[4] = 0;
                 Bet::Stored::betPlace[4] = Bet::betPlace[4];
                 ui->nineSpinBox->setValue(Bet::betPlace[4]);
-                ui->label->setText(tr("BET CLEARED\nON 9"));
+                ui->label->setText(tr("BET CLEARED ON 9"));
 
             }else if(ui->RBetSpinBox->value() == 10){
                 Bet::balance += ui->tenSpinBox->value();
                 Bet::betOt[5] = 0;
                 Bet::Stored::betPlace[5] = Bet::betPlace[5];
                 ui->tenSpinBox->setValue(Bet::betPlace[5]);
-                ui->label->setText(tr("BET CLEARED\nON 10"));
+                ui->label->setText(tr("BET CLEARED ON 10"));
 
 
             }else if(ui->RBetSpinBox->value() == 2){
                 Bet::balance += Bet::betOt[0];
                 Bet::betOt[0] = 0;
-                ui->label->setText(tr("BET CLEARED\nON 2"));
+                ui->label->setText(tr("BET CLEARED ON 2"));
                 ui->twoSpinBox->setValue(Bet::betOt[0]);
 
             }else if(ui->RBetSpinBox->value() == 3){
                 Bet::balance += Bet::betOt[1];
                 Bet::betOt[1] = 0;
-                ui->label->setText(tr("BET CLEARED\nON 3"));
+                ui->label->setText(tr("BET CLEARED ON 3"));
                 ui->threeSpinBox->setValue(Bet::betOt[1]);
 
             }else if(ui->RBetSpinBox->value() == 7){
                 Bet::balance += Bet::betOt[2];
                 Bet::betOt[2] = 0;
-                ui->label->setText(tr("BET CLEARED\nON 3"));
+                ui->label->setText(tr("BET CLEARED ON 3"));
                 ui->sevenSpinBox->setValue(Bet::betOt[2]);
 
             }else if(ui->RBetSpinBox->value() == 11){
                 Bet::balance += Bet::betOt[3];
                 Bet::betOt[3] = 0;
-                ui->label->setText(tr("BET CLEARED\nON 11"));
+                ui->label->setText(tr("BET CLEARED ON 11"));
                 ui->elevenSpinBox->setValue(Bet::betOt[3]);
 
             }else if(ui->RBetSpinBox->value() == 12){
                 Bet::balance += Bet::betOt[4];
                 Bet::betOt[4] = 0;
-                ui->label->setText(tr("BET CLEARED\nON 12"));
+                ui->label->setText(tr("BET CLEARED ON 12"));
                 ui->twelveSpinBox->setValue(Bet::betOt[4]);
             }else;
 
@@ -445,13 +451,14 @@ void MainWindow::outcome()
 
             ui->betPushButton->setEnabled(true);             /// resets pass line bet
             ui->repeatButton->setEnabled(true);
-               
+
             ui->fourSpinBox->setValue(Bet::betPlace[0]);
             ui->fiveSpinBox->setValue(Bet::betPlace[1]);
             ui->sixSpinBox->setValue(Bet::betPlace[2]);
             ui->eightSpinBox->setValue(Bet::betPlace[3]);
             ui->nineSpinBox->setValue(Bet::betPlace[4]);
             ui->tenSpinBox->setValue(Bet::betPlace[5]);
+            ui->label->setText(tr("7 OUT!!!"));
 
         }else {
             ui->passSpinBox->setValue(Bet::table[0]);

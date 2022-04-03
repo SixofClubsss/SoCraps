@@ -1,6 +1,6 @@
-#include "bet.h"
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "bet.h"
 #include "rulespopup.h"
 
 
@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    qApp->setStyleSheet("QGroupBox {  border: 1px solid gray;}");
+    qApp->setStyleSheet("QGroupBox {  border: 0.5px solid black;}");
 }
 
 
@@ -89,3 +89,4 @@ void MainWindow::on_oRepeatButton_clicked()
 {
     oRepeatBet();
 }
+
