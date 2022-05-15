@@ -9,15 +9,16 @@ Work in progress to help me learn. Used Qt 5.12.8 to build the Ui. The game is m
 ---
 ## Screenshot
 
-![SoCrapsScreen](https://user-images.githubusercontent.com/84689659/161405837-fdc58e5f-cbb9-4391-91a9-c5d71fa367ac.jpg)
+![Screenshot 2022-05-15 15:51:44](https://user-images.githubusercontent.com/84689659/168495424-7a17ebf2-8193-44a2-b70f-7a5957b99f44.png)
+
 ---
 ### To Do List
 - [ ] Add pass & don't pass odds bets, *3-4-5 game*
 - [ ] Add multi outcome bets ie: *any crap, horn, hi lo, field*
-- [ ] Clean stuff up, might have some redundancies
+- [X] Clean stuff up, might have some redundancies
 - [X] Add pop up at the start with *how to play and rules* 
-- [ ] Fix maximize to make full screen 
-- [ ] Button colors don't work when built
+- [X] Fix maximize to make full screen 
+- [X] Button colors don't work when built
 - [ ] Further intergrations
 
 ---
@@ -27,9 +28,29 @@ Work in progress to help me learn. Used Qt 5.12.8 to build the Ui. The game is m
 2. Open Qt Creator, File > Open File or Project... > Locate `CMakeLists.txt` and open it
 3. Click **Run**
 > ### Without Qt Creator
-You can also build without Qt Creator, if your system has `CMake` & `Make`. 
-1. Download the repo
-2. Run `cmake CMakeLists.txt` then `make` in the **SoCraps** folder
-3. Ensure permissions allow `SoCraps` to execute & Run `SoCraps`
+You can also build without Qt Creator,
+
+### Linux instructions
+
+1. Install dependencies
+```
+sudo apt update
+sudo apt install build-essential cmake 
+sudo apt install --no-install-recommends qtbase5-dev qttools5-dev libqt5svg5-dev
+```
+
+2. Download repo & build
+```
+git clone https://github.com/SixofClubsss/SoCraps.git
+cd SoCraps
+cmake CMakeLists.txt
+make
+```
+
+3. Start app
+```
+./SoCraps
+```
+#
 
 ---
